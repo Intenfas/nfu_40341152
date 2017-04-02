@@ -45,7 +45,7 @@ print (angle2)
 angle2 = 108.538764375
 
 
-# 第三個範例
+# 使用numpy 進行矩陣乘法運算
 
 import numpy as np
 
