@@ -21,7 +21,7 @@ b = np.array([-22, 13, -15])
 
 la = np.sqrt(a.dot(a))
 lb = np.sqrt(b.dot(b))
-print("----計算向量長度------")
+print("----計算向量長度----")
 print (la, lb)
 la,lb = (44.474711915874174, 29.631064780058107)
 
