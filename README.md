@@ -1,11 +1,16 @@
 MIN_YUE TEST
 =========================
+
+
 #一般的向量相加，但會變成矩陣串列
+
 x = [13, 2, 5]
 y = [1, 9, 12]
 print x + y
 x+y = [13, 2, 5, 1, 9, 12]
+
 #使用numpy 可以簡易使用向量運算
+
 import numpy as np
 
 a = np.array([12, 21, 34])
@@ -14,6 +19,7 @@ print a + b
 a+b= [37 65 97]
 
 #使用numpy 計算角度公式
+
 import numpy as np
 
 a = np.array([21, 31, 24])
