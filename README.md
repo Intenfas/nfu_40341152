@@ -75,3 +75,34 @@ print("----矩陣相乘----")
 print (e)
 print (f)
 print("----矩陣相乘----")
+
+# 繪製圖表
+import numpy as np
+from matplotlib import pyplot
+from numpy import *
+
+
+a = mat([[1,2,-6],[3,10,8],[7,4,5]])
+print linalg.det(a)
+x = np.arange(0,10,0.1)
+y = np.sin(x)
+pyplot.plot(x,y)
+pyplot.show()
+
+
+
+
+# 使用pandas與Random作出亂數之散佈圖
+
+import pandas as pd
+%matplotlib inline
+import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = pd.DataFrame()
+
+df['x'] = random.sample(range(0, 100), 30)
+df['y'] = random.sample(range(0, 100), 30)
+fig=sns.lmplot('x', 'y', data=df, fit_reg=False)
+fig.savefig(“output.png”)
+fig.plt.show()

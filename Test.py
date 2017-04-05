@@ -129,3 +129,12 @@ def two_sided_p_value(x, mu=0, sigma=1):
 
 
 print "檢定兩者之間是否有差異", (two_sided_p_value(z))
+
+
+import numpy as np
+from matplotlib import pyplot
+
+x = np.arange(0,10,0.1)
+y = np.sin(x)
+pyplot.plot(x,y)
+pyplot.show()
