@@ -84,7 +84,7 @@ from numpy import *
 
 a = mat([[1,2,-6],[3,10,8],[7,4,5]])
 print linalg.det(a)
-x = np.arange(0,10,0.1)
+x = np.arange(0,10,0.2)
 y = np.sin(x)
 pyplot.plot(x,y)
 pyplot.show()
