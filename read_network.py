@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import requests
 import json
+
 #判斷是不是影片
 def is_video(td):
     pricelabels = td('span', 'pricelabel')
@@ -35,7 +36,7 @@ def book_info(td):
 base_url = "http://shop.oreilly.com/category/browse-subjects/" + \
  "data.do?sortby=publicationDate&page="
 books = []
-NUM_PAGES = 2 # at the time of writing, probably more by now
+NUM_PAGES = 10 # at the time of writing, probably more by now
 for page_num in range(1, NUM_PAGES + 1):
  print "souping page", page_num, ",", len(books), " found so far"
  url = base_url + str(page_num)
@@ -56,11 +57,15 @@ def get_year(book):
 year_counts = Counter(get_year(book) for book in books
                        if get_year(book) <= 2017)
 years = sorted(year_counts)
+
 book_counts = [year_counts[year] for year in years]
 plt.plot(years, book_counts)
 plt.ylabel("# of data books")
 plt.title("Data is Big!")
 plt.show()
+
+
+
 print ("\nnext")
 print ("Auth")
 endpoint = "https://api.github.com/users/intenfas/repos"
