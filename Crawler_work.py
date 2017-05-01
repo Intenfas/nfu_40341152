@@ -45,7 +45,7 @@ base_url2 = "http://class.ruten.com.tw/category/sub00.php?c=000500040032&p="
 time=0
 shops = []
 shops_trn = []
-NUM_PAGES = 30 # at the time of writing, probably more by now
+NUM_PAGES = 50 # at the time of writing, probably more by now
 for page_num in range(1, NUM_PAGES + 1):
  print "souping page", page_num, ",", len(shops), " found so far"
  url = base_url2 + str(page_num)
@@ -81,19 +81,19 @@ while i <= time:
  i+=1
 
 #
-print sorted(c)
+#print sorted(c)
 
+#def get_year(book):
+  #return c[book]
 
-def get_year(book):
-  return c[book]
+counts = Counter(c)
+prices = sorted(counts)
+price_counts = [counts[price] for price in prices]
 
-year_counts = Counter(c)
-years = sorted(year_counts)
-book_counts = [year_counts[year] for year in years]
-
-plt.plot(years, book_counts)
-plt.ylabel("# of data books")
-plt.title("Data is Big!")
+plt.plot(prices,price_counts)
+plt.ylabel("Price Cumulative number of times")
+plt.xlabel("Price Distributed")
+plt.title("The Shop goods price distributed map --1500 piece of data--price under 2000")
 plt.show()
 
 
